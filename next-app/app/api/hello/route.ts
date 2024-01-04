@@ -18,9 +18,7 @@ export async function GET() {
 
   const doId = myDo.idFromName('my-do-name');
   const doObj = myDo.get(doId);
-  // @ts-ignore
-  const doResp = await doObj.fetch(new Request('http://0.0.0.0'));
-  // const doResp = await doObj.fetch('http://0.0.0.0');
+  const doResp = await doObj.fetch('http://0.0.0.0');
   const doRespText = await doResp.text();
 
   return new Response(
@@ -37,7 +35,6 @@ export async function GET() {
       MY_D1 typeof exec = ${typeof process.env.MY_D1.exec}
 
       MY_R2 typeof createMultipartUpload = ${typeof process.env.MY_R2.createMultipartUpload}
-
 
     `
   );
