@@ -11,8 +11,8 @@ export async function GET() {
   await myKv.put(key, 'my-value');
   const value = await myKv.get(key);
 
-  // const workerResp = await process.env.MY_WORKER.fetch('http://localhost');
-  const workerRespText = '';//await workerResp.text();
+  const workerResp = await process.env.MY_WORKER.fetch('http://localhost');
+  const workerRespText = await workerResp.text();
 
   const myDo = process.env.MY_DO;
 

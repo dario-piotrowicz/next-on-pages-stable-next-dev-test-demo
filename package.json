@@ -1,31 +1,14 @@
 {
-  "name": "stable-next-dev-test",
-  "version": "0.1.0",
-  "private": true,
+  "name": "stable-next-dev-test-demo",
+  "workspaces": [
+    "next-app",
+    "workers/*"
+  ],
   "scripts": {
-    "predev": "npm i",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static",
-    "pages:watch": "npx @cloudflare/next-on-pages --watch",
-    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-date=2023-12-18 --compatibility-flag=nodejs_compat"
-  },
-  "dependencies": {
-    "next": "14.0.4",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
-    "@cloudflare/next-on-pages": "/Users/dario/Repos/my-repos/next-on-pages/packages/next-on-pages",
-    "@cloudflare/workers-types": "^4.20231218.0",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "typescript": "^5",
-    "vercel": "^33.0.1",
-    "wrangler": "3.11.0"
+    "start-hello-worker": "npm run start -w workers/hello-worker",
+    "start-do-worker": "npm run start -w workers/do-worker",
+    "start-workers": "npm run start-hello-worker & npm run start-do-worker",
+    "start-next-app": "npm run dev -w next-app",
+    "start": "npm run start-workers & (sleep 3 && npm run start-next-app)"
   }
 }
