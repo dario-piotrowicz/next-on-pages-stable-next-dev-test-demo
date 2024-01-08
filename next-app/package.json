@@ -18,7 +18,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "https://prerelease-registry.devprod.cloudflare.dev/next-on-pages/runs/7452085053/npm-package-next-on-pages-612",
+    "@cloudflare/next-on-pages": "beta",
     "@cloudflare/workers-types": "^4.20231218.0",
     "@types/node": "^20",
     "@types/react": "^18",
