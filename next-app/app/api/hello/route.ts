@@ -26,7 +26,9 @@ export async function GET() {
 
       MY_KV[${key}] = ${JSON.stringify(value)}
 
-      MY_VAR = ${process.env.MY_VAR}
+      MY_VAR = ${JSON.stringify(process.env.MY_VAR)}
+
+      MY_JSON_VAR = ${JSON.stringify(process.env.MY_JSON_VAR)}
 
       MY_WORKER response = ${JSON.stringify(workerRespText)}
 

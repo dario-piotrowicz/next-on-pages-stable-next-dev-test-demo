@@ -16,6 +16,13 @@ if (process.env.NODE_ENV === 'development') {
                 type: 'var',
                 value: 'my-var-value'
             },
+            "MY_JSON_VAR": {
+                type: 'var',
+                value: {
+                    typeOfVar: 'JSON',
+                    hello: 'world'
+                }
+            },
             "MY_WORKER": {
                 type: 'service',
                 service: {

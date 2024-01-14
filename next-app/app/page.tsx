@@ -22,7 +22,8 @@ export default async function Home() {
   return (
     <main className={styles.main}>
        <p> MY_KV[{key}] = {JSON.stringify(value)}</p>
-       <p> MY_VAR = {process.env.MY_VAR}</p>
+       <p> MY_VAR = {JSON.stringify(process.env.MY_VAR)}</p>
+       <p> MY_JSON_VAR = {JSON.stringify(process.env.MY_JSON_VAR)}</p>
        <p> MY_WORKER response = {JSON.stringify(workerRespText)}</p>
        <p> MY_DO response = {JSON.stringify(doRespText)}</p>
        <p> MY_D1 typeof exec = {typeof process.env.MY_D1.exec}</p>
